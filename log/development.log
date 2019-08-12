@@ -1312,6 +1312,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started POST "/accounts/3/projects/3/bids" for ::1 at 2019-08-10 15:28:31 -0500
   [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by BidsController#create as */*
@@ -1519,3 +1520,5 @@ Processing by AccountsController#index as */*
 Completed 200 OK in 18ms (Views: 9.3ms | ActiveRecord: 3.6ms | Allocations: 10248)
 
 
+=======
+>>>>>>> parent of 75bc2bf... Cors
