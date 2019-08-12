@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :installs
   root 'accounts#index'
   resources :bids
   resources :accounts do
@@ -7,5 +8,6 @@ Rails.application.routes.draw do
     end
   end
   resources :projects, only: [:index, :show]
+  resources :sessions, only: [:new, :create, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
