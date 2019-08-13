@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new
   end
   def create
-    account = Account.find_by_user(params[:user_name)
+    account = Account.find_by(user_name: params[:user_name)
     if account && account.authenticate(params[:password])
       session[:account_id] = account.id
       redirect_to root_url, notice: "Logged in!"
