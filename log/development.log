@@ -1836,3 +1836,24 @@ Processing by ProjectsController#index as HTML
 Completed 200 OK in 52ms (Views: 0.1ms | ActiveRecord: 11.5ms | Allocations: 25038)
 
 
+Started GET "/accounts/" for ::1 at 2019-08-13 14:11:27 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AccountsController#index as */*
+  Parameters: {"account"=>{"user_name"=>"nidaB", "f_name"=>"Nida", "l_name"=>"Badar", "bio"=>"Hello", "location"=>"Dallas", "email"=>"mujbadar@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mAccount Load (0.5ms)[0m  [1m[34mSELECT "accounts".* FROM "accounts"[0m
+  ↳ app/controllers/accounts_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 10.2ms | ActiveRecord: 4.1ms | Allocations: 13034)
+
+
+Started GET "/projects" for ::1 at 2019-08-13 14:11:36 -0500
+Processing by ProjectsController#index as */*
+  Parameters: {"account"=>{"user_name"=>"nidaB", "f_name"=>"Nida", "l_name"=>"Badar", "bio"=>"Hello", "location"=>"Dallas", "email"=>"mujbadar@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mProject Load (1.0ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/controllers/projects_controller.rb:8:in `index'
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."project_id" = $1[0m  [["project_id", 1]]
+  ↳ app/controllers/projects_controller.rb:8:in `index'
+  [1m[36mBid Load (0.3ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."project_id" = $1[0m  [["project_id", 2]]
+  ↳ app/controllers/projects_controller.rb:8:in `index'
+Completed 200 OK in 41ms (Views: 0.1ms | ActiveRecord: 5.8ms | Allocations: 24853)
+
+

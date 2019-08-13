@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'accounts#index'
   resources :bids
-  resources :accounts, param: :_user_name do
+  resources :accounts do
     resources :projects, only: [:index, :create, :update, :delete] do
       resources :bids, only: [:create, :update, :delete]
     end
