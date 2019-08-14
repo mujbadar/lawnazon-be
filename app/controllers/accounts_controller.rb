@@ -1,12 +1,23 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: [:show, :update, :destroy]
 
+
   # GET /accounts
   def index
     @accounts = Account.all
 
     render json: @accounts
   end
+
+  #Post login
+  def login
+    user = Account.find_by(user_name: params[:account][:user_name])
+    if user && user.authenticate(params[:account][:password])
+      render json: {status: 200, account: user}
+    else
+      render json: {status: 401, message: 'Unauthorized'}
+    end
+end
 
   # GET /accounts/1
   def show
